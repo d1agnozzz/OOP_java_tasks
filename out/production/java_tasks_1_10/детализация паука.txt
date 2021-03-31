@@ -1,0 +1,29 @@
+Определить, на каком расстоянии радиал точки друг от друга.
+	дист.
+
+Определить точку перехода на другой радиал (меньшее кольцо из двух точек)
+	точ.пер.
+
+Определить, идти ли по часовой стрелке или против
+	напр.
+
+Перейти на кольцо точ.пер.
+
+Перейти на дист. в напр.
+
+Подняться кольцо финишной точки
+
+int radial_dist = start.radial - finish.radial;
+
+int cross_ring = Math.min(start.ring, finish.ring)
+
+int direction;
+
+if (radial_dist >= 0)
+	direction = 1;
+
+else
+	direction = -1;
+	
+for (int i = start.ring; i != finish.ring; i += direction) {
+	path.add(new WebPoint(start.radial, i+direction))
